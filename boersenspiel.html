@@ -6,41 +6,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="boerse.js"></script>
 </head>
 <body class="container-fluid bg-light" style="max-width: 920px;">
 	<div class="row mt-2">
 		<h1 class="col-sm">Börsenspiel</h1>
-		<button id="exitButton"
+		<button id="exitButton" onclick="end()"
 			class="btn btn-lg btn-primary col-sm-2 float-right">Beenden</button>
 	</div>
 	<div class="row mt-2">
-		<canvas id="gameCanvas"
+		<canvas id="gameCanvas" width="610" height="250"
 			class="col-sm border border-secondary bg-white"></canvas>
 	</div>
 	<div class="row mt-2">
-		<button id="startButton" class="btn btn-lg btn-primary col-sm-2 m-1">Spiel
-			starten</button>
+		<button id="startButton" class="btn btn-lg btn-primary col-sm-2 m-1"
+			onclick="startGame(100)">Spiel starten</button>
 		<div class="col-sm">
 			Aktueller Kurs: <span id="kursField" class="bg-white">100.00</span>
 			Euro
 		</div>
 	</div>
 	<div class="row mt-2">
-		<button id="buyButton" class="btn btn-lg btn-secondary col-sm m-1">Kaufen</button>
-		<button id="sellButton" class="btn btn-lg btn-secondary col-sm m-1">Verkaufen</button>
+		<button id="buyButton" class="btn btn-lg btn-secondary col-sm m-1"
+			onclick="buy()">Kaufen</button>
+		<button id="sellButton" class="btn btn-lg btn-secondary col-sm m-1"
+			onclick="sell()">Verkaufen</button>
 		<div class="col-sm"></div>
 	</div>
 	<div class="row mt-2">
 		<div class="col-sm">
-			Kontostand: <span id="kontostandField" class="bg-white">1000.00</span> Euro
+			Kontostand: <span id="kontostandField" class="bg-white"
+				data-toggle="tooltip" data-placement="bottom">1000</span> Euro
 		</div>
 		<div class="col-sm">
-			Anzahl Aktien im Besitz: <span id="aktienField" class="bg-white">0</span> Aktien
+			Anzahl Aktien im Besitz: <span id="aktienField" class="bg-white">0</span>
+			Aktien
 		</div>
 		<div class="col-sm">
-			Restzeit: <span id="timeField" class="bg-white">300.00</span> Sekunden
+			Restzeit: <span id="timeField" class="bg-white">300</span> Sekunden
 		</div>
 	</div>
+
+
 </body>
 </html>
