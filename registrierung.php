@@ -77,6 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (strlen($error) == 0) {
+        $csv = "teilnehmer.txt";
+        $handle = fopen($csv, "a") or die("Cannot open file: " . $csv);
+        fwrite($handle, $prefix . ";" . $givenName . ";" . $surname . ";" . $email . ";" . $birthday . ";" . $postcode . "\n");
         header('Location: boersenspiel.html');
         exit();
     }
