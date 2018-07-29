@@ -1,1 +1,1 @@
-prefix;givenName;surname;email;birthday;postcode
+reg-date;reg-time;prefix;givenName;surname;email;birthday;postcode
