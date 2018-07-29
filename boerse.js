@@ -66,6 +66,8 @@ function startGame(value) {
 					value = 100.00;
 					var deleteGraph = 1;
 
+					$("#kontostandField").html(Math.round(kapital * 100) / 100);
+					$("#aktienField").html(aktienAnzahl);
 					// Bärenmarkt(reset, wenn 25% Chance eintritt)
 				} else if (randomPercent <= 75 && countLoss >= 3) {
 					value -= randomNumber(10, 90) / 100;
