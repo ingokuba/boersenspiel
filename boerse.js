@@ -59,7 +59,6 @@ function startGame(value) {
 					currentValue = 0;
 					kapital = 1000.00;
 					aktienAnzahl = 0;
-					endProgram;
 					countWin = 0;
 					countLoss = 0;
 					counter = 0;
@@ -111,6 +110,7 @@ function startGame(value) {
 				// Werte aktualisieren
 				$("#kursField").html(Math.round(value * 100) / 100);
 				$("#timeField").html(300 - counter);
+				$("#gewinnField").html(Math.round((kapital - 1000 + aktienAnzahl * currentValue) * 100) / 100);
 			}, 1000);
 }
 
@@ -120,6 +120,7 @@ function buy() {
 		aktienAnzahl += 1;
 		$("#kontostandField").html(Math.round(kapital * 100) / 100);
 		$("#aktienField").html(aktienAnzahl);
+		$("#gewinnField").html(Math.round((kapital - 1000 + aktienAnzahl * currentValue) * 100) / 100);
 	} else {
 		showTooltip("#kontostandField",
 				"Sie benötigen Geld, um Aktien zu kaufen!");
@@ -137,6 +138,7 @@ function sell() {
 		kapital += currentValue;
 		$("#kontostandField").html(Math.round(kapital * 100) / 100);
 		$("#aktienField").html(aktienAnzahl);
+		$("#gewinnField").html(Math.round((kapital - 1000 + aktienAnzahl * currentValue) * 100) / 100);
 	}
 }
 
